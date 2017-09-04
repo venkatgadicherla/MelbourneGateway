@@ -1,0 +1,164 @@
+﻿<Page
+    x:Class="GatewayMelbourne.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GatewayMelbourne"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded" >
+    <Page.Resources>
+        <Flyout x:Key="flyCategories" Placement="Right">
+           
+
+
+            <ListBox  Name="lbCategorySelection"  SelectionChanged="lbCategorySelection_SelectionChanged" Background="Black" Foreground="White">
+                <ListBoxItem Name="lbItem_AddFavourite" >
+                    <TextBlock  Name="tblEventsCategory" Style="{StaticResource MenuFont }" Tapped="tblEventsCategory_Tapped">Events</TextBlock>
+                </ListBoxItem>
+                <ListBoxItem Name="lbItem_ViewFavourite">
+                    <TextBlock Name="tblDayToursCategory" Style="{StaticResource MenuFont }" Tapped="tblDayToursCategory_Tapped">DayTours</TextBlock>
+                </ListBoxItem>
+                <ListBoxItem Name="lbItem_DeleteFavourite">
+                    <TextBlock Name="tblIntheCity" Style="{StaticResource MenuFont }" Tapped="tblIntheCity_Tapped">In the City</TextBlock>
+
+                </ListBoxItem>
+                <ListBoxItem Name="lbItem_Parks">
+                    <TextBlock Name="tblParksCategory" Style="{StaticResource MenuFont }" Tapped="tblParksCategory_Tapped">Parks And Gardens</TextBlock>
+
+                </ListBoxItem>
+
+            </ListBox>
+
+        </Flyout>
+        <Flyout x:Key="flyFavourites" Placement="Right">
+
+
+
+            <ListBox  Name="lbFavourite"  SelectionChanged="lbFavourite_SelectionChanged" Background="Black" Foreground="White">
+                <ListBoxItem Name="lbItem_ViewFavourites" >
+                    <TextBlock  Name="tblViewFavourites" Style="{StaticResource MenuFont }" Tapped="tblViewFavourites_Tapped">View Favourites</TextBlock>
+                </ListBoxItem>
+                <ListBoxItem Name="lbItem_AddToFavourites">
+                    <TextBlock Name="tblFavourites" Style="{StaticResource MenuFont }" Tapped="tblFavourites_Tapped">Add To Favourites</TextBlock>
+                </ListBoxItem>
+                <ListBoxItem Name="lbItem_DeleteFavourites ">
+                    <TextBlock Name="tblDeleteFavourites" Style="{StaticResource MenuFont }" Tapped="tblDeleteFavourites_Tapped">Delete Favourites</TextBlock>
+
+                </ListBoxItem>
+                
+
+            </ListBox>
+
+        </Flyout>
+
+
+    </Page.Resources>
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" >
+            </RowDefinition>
+            <RowDefinition Height="3*" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto">
+
+            </ColumnDefinition>
+            <ColumnDefinition Width="*" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <RelativePanel Name="TopPanel" Grid.ColumnSpan="2" Background="#20B2AA" Margin="2,-2,-2,2">
+            
+            <Button Name="HamBurger" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" ToolTipService.ToolTip="Menu" FontSize="36" Click="HamBurger_Click" Margin="0.028,1,65.366,1" Height="56" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" HorizontalAlignment="Stretch" ToolTipService.Placement="Right" Style="{StaticResource styleNavigation}">
+                <Button.RenderTransform>
+                    <CompositeTransform SkewX="0.265" TranslateX="-0.162"/>
+                </Button.RenderTransform>
+            </Button>
+            <Button Name="btnBack" Style="{StaticResource styleNavigation}" Click="btnBack_Click"  FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;" FontSize="36" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="HamBurger"  ToolTipService.ToolTip="Back" ToolTipService.Placement="Right" Margin="0,0,-27,0" Width="95"  IsEnabled="False">
+
+            </Button>
+            <Button Name="btnForward"  Click="btnForward_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE0AB;" ToolTipService.ToolTip="Forward" FontSize="36" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.LeftOf="asbSearchBox"  Width="95"  Margin="0,0,150,0" ToolTipService.Placement="Right" IsEnabled="False" Style="{StaticResource styleNavigation}">
+
+            </Button>
+
+            <AutoSuggestBox x:Name="asbSearchBox"  TextChanged="asbSearchBox_TextChanged"   RelativePanel.AlignRightWithPanel="True" QueryIcon="Find" RelativePanel.AlignBottomWithPanel="True" Margin="-110,0,0,0" PlaceholderText="Search" QuerySubmitted="asbSearchBox_QuerySubmitted"  > </AutoSuggestBox>
+        </RelativePanel>
+        <StackPanel Name="BodyPaael" Grid.Row="1" Margin="5,0,0,5"  Grid.Column="0"  Orientation="Horizontal">
+
+            <SplitView Name="MenuSplitView" 
+                   DisplayMode="CompactOverlay"
+                   OpenPaneLength="200"
+                   CompactPaneLength="34"
+                   HorizontalAlignment="Left" Foreground="#FFFDE9E9" Width="143"
+                   RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.RightOf="frameGrid" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWith="frameGrid">
+
+                <SplitView.Pane>
+                    <ListBox SelectionMode="Single" Name="menuListBox"  Foreground="White"  Background="Black"      >
+
+
+                        <ListBoxItem  Background="Transparent">
+                            <StackPanel   Orientation="Horizontal" >
+                                <TextBlock  Name="tbHomeSymbol" FontFamily="Segoe MDL2 Assets"  Style="{StaticResource  MainMenuFontSymbol }" Text="&#xE80F;" FontSize="18" VerticalAlignment="Center" Tapped="tbHome_Tapped"   >
+                                </TextBlock>
+                                <TextBlock Name="tbHome" Style="{StaticResource MainMenuFont }" Text="Home" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="tbHome_Tapped" ></TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Name="CategoriesListBoxItem"   >
+                            <StackPanel  Name="panelCategories" Orientation="Horizontal"  >
+                                <TextBlock Name="CategoryIcon_tb" FontFamily="Segoe MDL2 Assets" Text="&#xE14C;" FontSize="18"  Style="{StaticResource  MainMenuFontSymbol }" VerticalAlignment="Center" Tapped="tbCategories_Tapped" FlyoutBase.AttachedFlyout="{StaticResource flyCategories}">
+
+                                </TextBlock>
+                                <TextBlock x:Name="tbCategories"  Text="Category" FontSize="18" Style="{StaticResource MainMenuFont}" VerticalAlignment="Center"    Tapped="tbCategories_Tapped"  FlyoutBase.AttachedFlyout="{StaticResource flyCategories}">
+
+
+                                </TextBlock>
+
+                            </StackPanel>
+
+                        </ListBoxItem>
+                        <ListBoxItem   >
+                            <StackPanel   Orientation="Horizontal">
+                                <TextBlock  Name="tbFavouritesIcon" FontFamily="Segoe MDL2 Assets" Text="&#xE734;" FontSize="18" Style="{StaticResource MainMenuFontSymbol}" VerticalAlignment="Center" Tapped="hlinkFav_Tapped" FlyoutBase.AttachedFlyout="{StaticResource flyFavourites}"></TextBlock>
+                                <TextBlock Name="tbhlinkFav" Text="Favourites" FontSize="18" Style="{StaticResource MainMenuFont}" VerticalAlignment="Center" Tapped="hlinkFav_Tapped" FlyoutBase.AttachedFlyout="{StaticResource flyFavourites}" >
+
+                                </TextBlock>
+
+
+
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem  >
+                            <StackPanel   Orientation="Horizontal" >
+                               
+                                <TextBlock  Name="tbDirectionsIcon" FontFamily="Segoe MDL2 Assets" Text="&#xE816;" FontSize="18" Style="{StaticResource MainMenuFontSymbol}" VerticalAlignment="Center" Tapped="tb_directions_Tapped"></TextBlock>
+                                <TextBlock  x:Name="tb_directions" Text="Directions" FontSize="18" Style="{StaticResource MainMenuFont}"  VerticalAlignment="Center" Tapped="tb_directions_Tapped" />
+
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem   >
+                            <StackPanel   Orientation="Horizontal">
+                                <TextBlock  Name="tblHelpIcon" FontFamily="Segoe MDL2 Assets" Text="&#xE11B;" FontSize="18" Style="{StaticResource MainMenuFontSymbol}" VerticalAlignment="Center" Tapped="tblHelp_Tapped" FlyoutBase.AttachedFlyout="{StaticResource flyFavourites}"></TextBlock>
+                                <TextBlock Name="tblHelp" Text="Help" FontSize="18" Style="{StaticResource MainMenuFont}" VerticalAlignment="Center" Tapped="tblHelp_Tapped" >
+
+                                </TextBlock>
+
+
+
+                            </StackPanel>
+                        </ListBoxItem>
+
+                    </ListBox>
+                </SplitView.Pane>
+            </SplitView>
+
+            <StackPanel Name="frameGridPanel"  Loading="frameGrid_Loading" Grid.Column="1" Grid.Row="2" Width="Auto" Margin="10" VariableSizedWrapGrid.ColumnSpan="1" Height="1100" >
+                
+                <Frame x:Name="MainFrame" Loaded="MainFrame_Loaded"    LayoutUpdated="MainFrame_LayoutUpdated"  />
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

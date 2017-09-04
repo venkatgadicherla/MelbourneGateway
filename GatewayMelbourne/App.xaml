@@ -1,0 +1,109 @@
+﻿<Application
+    x:Class="GatewayMelbourne.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GatewayMelbourne"
+     
+    RequestedTheme="Light">
+    <Application.Resources>
+        <Style TargetType="Page" x:Key="PageSize">
+            <Setter Property="Width" Value="1775.083">
+                
+            </Setter>
+            <Setter Property="Height" Value="1168.808"></Setter>
+            
+        </Style>
+        <LinearGradientBrush x:Key="BgColor" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF006C7E" Offset="1"/>
+            <GradientStop Color="White" Offset="0.633"/>
+        </LinearGradientBrush>
+        <Style TargetType="Button" x:Key="styleNavigation">
+            <Setter Property="Foreground" Value="White"></Setter>
+           
+        </Style>
+        <Style TargetType="StackPanel" x:Key="innerUpperPanelStyle">
+            <Setter Property="CornerRadius" Value="5"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Margin" Value="50,20"></Setter>
+            <Setter Property="Width" Value="567"></Setter>
+
+        </Style>
+        <Style TargetType="StackPanel" x:Key="innerBottomPanelStyle">
+            <Setter Property="CornerRadius" Value="5"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Margin" Value="50,20,50,0"></Setter>
+            <Setter Property="Width" Value="567"></Setter>
+
+        </Style>
+        <Style TargetType="Image" x:Key="imageStyle">
+            <Setter Property="Stretch" Value="UniformToFill"></Setter>
+            <Setter Property="Margin" Value="0"></Setter>
+            <Setter Property="Height" Value="272"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="styleTextCategoryPage" >
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="TextWrapping" Value="WrapWholeWords"></Setter>
+            <Setter Property="Margin" Value="0,0,42,0"></Setter>
+            <Setter Property="Height" Value="54"></Setter>
+            <Setter Property="SelectionHighlightColor" Value="Yellow"></Setter>
+        </Style>
+        <Style TargetType="Image" x:Key="sideImages">
+            <Setter Property="Margin" Value="96,0,0,0"></Setter>
+            <Setter Property="Stretch" Value="UniformToFill"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="MenuFont">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="TextWrapping" Value="WrapWholeWords"></Setter>
+            <Setter Property="Margin" Value="0,10,10,0"></Setter>
+                <Setter Property="Height" Value="54"></Setter>
+        
+        </Style>
+        <Style TargetType="TextBlock" x:Key="MainMenuFont">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="TextWrapping" Value="WrapWholeWords"></Setter>
+            <Setter Property="Margin" Value="10,10,10,10"></Setter>
+           
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+
+        </Style>
+        <Style TargetType="TextBlock" x:Key="MainMenuFontSymbol">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="TextWrapping" Value="WrapWholeWords"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+
+        </Style>
+        <Style TargetType="TextBlock" x:Key="BodyFont">
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="Foreground" Value="#FF20B2AA"></Setter>
+            <Setter Property="TextWrapping" Value="WrapWholeWords"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="itemHeading">
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="Foreground" Value="#FF20B2AA"></Setter>
+            <Setter Property="TextWrapping" Value="WrapWholeWords"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="pageHeadingStyle">
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="FontSize" Value="60"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="DescStackPanel">
+            <Setter Property="Background" Value="#FF20B2AA"></Setter>
+            <Setter Property="Margin" Value="0,2"></Setter>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="TextPanel">
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Margin" Value="0,2"></Setter>
+        </Style>
+
+    </Application.Resources>
+
+    
+
+</Application>
+<!--#FF689EA0-->

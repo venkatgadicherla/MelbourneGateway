@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="GatewayMelbourne.itemFlindersStreet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GatewayMelbourne"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   mc:Ignorable="d" Style="{StaticResource ResourceKey=PageSize}">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".25*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Margin="0,35,0,23" Width="143"  />
+            <TextBlock Name="tblHeader" Text="Flinders Street" FontSize="45" Margin="30" Width="365"></TextBlock>
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  /> 
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+            <Image Source="Assets/City/FlindersStreet/Logo.png" Height="30"  />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,29,0,-6" HorizontalAlignment="Left" Width="1630">
+            <StackPanel  Margin="0,0,50,337" CornerRadius="5" Width="1053">
+                <StackPanel Background="Black" CornerRadius="5">
+                    <Image Margin="2" Source="Assets/City/FlindersStreet/FedSquare.png" Stretch="UniformToFill" Height="400" />
+                </StackPanel>
+                <StackPanel Name="pnlitemText" CornerRadius="5" Style="{StaticResource DescStackPanel}">
+                    <StackPanel Name="pnlitemInnerText" Style="{StaticResource TextPanel}" CornerRadius="5"  Height="85">
+
+                        <TextBlock  Name="tblItemDescription" Style="{StaticResource BodyFont}" >
+                            <Run Text="In the heart of the city lies the Flinders Street precinct. This would be the most happening place in Melbourne.The iconic Flinders Street Station,Federation Square,St Pauls Cathedral,the Princes Bridge and the Arts Precinct together form this precinct"/>
+                            <Run Text=".Whether you are in for a better dining experience or to experience the antiquity of Flinders Street Station or experience arts at the Art Centre the Flinders Street and Arts centre precinct have got it for you"/>
+                            <Run Text=" The Federation Sqaure and Arts centre can be termed as the culutral centre of  Melbourne and indeed Australia."/>
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Style="{StaticResource ResourceKey=DescStackPanel}" CornerRadius="5" Margin="2,10,872,2" >
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource TextPanel}" CornerRadius="5"  Margin="2,2,0,2" HorizontalAlignment="Left" Width="175" >
+                        <TextBlock  x:Name="tbDirectionsIcon" Tapped="tbDirectionsIcon_Tapped" FontFamily="Segoe MDL2 Assets" Text="&#xE816;" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,1,15,2"/>
+                        <TextBlock x:Name="btnGetDirections" Text="Get Directions" Tapped="tbDirectionsIcon_Tapped"/>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+            <StackPanel Width="330" Margin="0,0,0,50" >
+
+                <Image Source="/Assets/City/FlindersStreet/FlindersStreetSmall.png" Style="{StaticResource sideImages}"></Image>
+                <Image Source="/Assets/City/FlindersStreet/PrinceBrdg.png" Style="{StaticResource sideImages}"></Image>
+                <Image Source="/Assets/City/FlindersStreet/StPaulsCathedralLarge.png" Style="{StaticResource sideImages}"></Image>
+                <Image Source="/Assets/City/FlindersStreet/ArtsCentre.png" Style="{StaticResource sideImages}"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
+
+

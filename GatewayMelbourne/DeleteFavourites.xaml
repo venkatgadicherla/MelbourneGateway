@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="GatewayMelbourne.DeleteFavourites"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GatewayMelbourne"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loading="Page_Loading" Style="{StaticResource ResourceKey=PageSize}">
+
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Name="panelFavourite" Background="Black" CornerRadius="30" Margin="250,20,120,244" Width="420" AllowDrop="False" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" >
+            <StackPanel.RenderTransform>
+                <CompositeTransform SkewX="0.356" TranslateX="2.994"/>
+            </StackPanel.RenderTransform>
+
+
+        </StackPanel>
+        <StackPanel Margin="120,300,800,450">
+            <StackPanel  Name="panelDelete" Margin="50" Background="Black" CornerRadius="30" AllowDrop="True">
+                <StackPanel Name="panelDeleteHeader" AllowDrop="True" Margin="10,10,10,10" Background="OrangeRed" CornerRadius="10"  Width="Auto" Height="Auto">
+
+                    <TextBlock x:Name="tbldeletesHeader"  AllowDrop="True" Text="Drag here to Delete"  Margin="58,10,86,10" FontFamily="Comic Sans MS" Foreground="White" HorizontalAlignment="Center" ></TextBlock>
+
+                </StackPanel>
+
+                <TextBlock Name="tblBin" FontFamily="Segoe MDL2 Assets" AllowDrop="True" Text="&#xE107;" HorizontalAlignment="Center" FontSize="50" Foreground="White" DragEnter="tblBin_DragEnter"></TextBlock>
+
+            </StackPanel>
+            <StackPanel Margin="50"  Background="Black" CornerRadius="30" Height="50" >
+                <StackPanel Name="panelDeleteAll" Margin="10,05,10,05" Background="OrangeRed" CornerRadius="10"  Width="Auto" Height="39">
+
+                    <TextBlock x:Name="tbldeleteAllHeader" Text="Clear All"  Tapped="tbldeleteAllHeader_Tapped" Margin="58,10,86,10" FontFamily="Comic Sans MS" Foreground="White" HorizontalAlignment="Center" ></TextBlock>
+
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+    </StackPanel>
+</Page>
+

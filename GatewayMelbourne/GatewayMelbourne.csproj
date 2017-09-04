@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{4A2708CD-7BCB-4E12-9FEA-95BB1042BB3C}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GatewayMelbourne</RootNamespace>
+    <AssemblyName>GatewayMelbourne</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>GatewayMelbourne_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;`</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Aquarium.xaml.cs">
+      <DependentUpon>Aquarium.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DayTours.xaml.cs">
+      <DependentUpon>DayTours.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="dbAdmin.xaml.cs">
+      <DependentUpon>dbAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DbHelperClass.cs" />
+    <Compile Include="DeleteFavourites.xaml.cs">
+      <DependentUpon>DeleteFavourites.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events.xaml.cs">
+      <DependentUpon>Events.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Favourites.xaml.cs">
+      <DependentUpon>Favourites.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetDirections.xaml.cs">
+      <DependentUpon>GetDirections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InTheCity.xaml.cs">
+      <DependentUpon>InTheCity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemAfl.xaml.cs">
+      <DependentUpon>itemAfl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemAusOpen.xaml.cs">
+      <DependentUpon>itemAusOpen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemBotanicalGarden.xaml.cs">
+      <DependentUpon>itemBotanicalGarden.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemCrown.xaml.cs">
+      <DependentUpon>itemCrown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemF1.xaml.cs">
+      <DependentUpon>itemF1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemFlindersStreet.xaml.cs">
+      <DependentUpon>itemFlindersStreet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemGreatOceanDrive.xaml.cs">
+      <DependentUpon>itemGreatOceanDrive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemMarket.xaml.cs">
+      <DependentUpon>itemMarket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemMelbCup.xaml.cs">
+      <DependentUpon>itemMelbCup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemMelbZoo.xaml.cs">
+      <DependentUpon>itemMelbZoo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemMountBuller.xaml.cs">
+      <DependentUpon>itemMountBuller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemPhilipIsland.xaml.cs">
+      <DependentUpon>ItemPhilipIsland.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemStkilda.xaml.cs">
+      <DependentUpon>itemStkilda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="itemWerribeeZoo.xaml.cs">
+      <DependentUpon>itemWerribeeZoo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs" />
+    <Compile Include="LocationObjects.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MelbourneMain.xaml.cs">
+      <DependentUpon>MelbourneMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParksAndGarderns.xaml.cs">
+      <DependentUpon>ParksAndGarderns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchObjects.cs" />
+    <Compile Include="SearchResults.xaml.cs">
+      <DependentUpon>SearchResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="viewFavourites.xaml.cs">
+      <DependentUpon>viewFavourites.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YarraValley.xaml.cs">
+      <DependentUpon>YarraValley.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="GatewayMelbourne_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\City\Crown\Crown1.png" />
+    <Content Include="Assets\City\Crown\Crown13.png" />
+    <Content Include="Assets\City\Crown\CrownDay.png" />
+    <Content Include="Assets\City\Crown\CrownLarge2.png" />
+    <Content Include="Assets\City\Crown\Poker.png" />
+    <Content Include="Assets\City\FlindersStreet\ArtsCentre.png" />
+    <Content Include="Assets\City\FlindersStreet\Logo.png" />
+    <Content Include="Assets\City\StKilda\PalaiTheatre.png" />
+    <Content Include="Assets\DayTours\GreatOceanRd\12Apostles.png" />
+    <Content Include="Assets\DayTours\GreatOceanRd\AppBay.png" />
+    <Content Include="Assets\DayTours\GreatOceanRd\GreatOcRd.png" />
+    <Content Include="Assets\DayTours\GreatOceanRd\Lighthouse.png" />
+    <Content Include="Assets\DayTours\GreatOceanRd\Logo.png" />
+    <Content Include="Assets\DayTours\GreatOceanRd\LondonBridge.png" />
+    <Content Include="Assets\DayTours\GreatOceanRd\View.png" />
+    <Content Include="Assets\DayTours\MtBullerImages\ClockTower.png" />
+    <Content Include="Assets\DayTours\MtBullerImages\FullView.png" />
+    <Content Include="Assets\DayTours\MtBullerImages\Mt.png" />
+    <Content Include="Assets\DayTours\MtBullerImages\MtBuller.png" />
+    <Content Include="Assets\DayTours\MtBullerImages\MtbullerEntrace.png" />
+    <Content Include="Assets\DayTours\MtBullerImages\MtBullerlogo.png" />
+    <Content Include="Assets\DayTours\MtBullerImages\Ropeway.png" />
+    <Content Include="Assets\DayTours\MtBullerImages\SideView.png" />
+    <Content Include="Assets\DayTours\PhilipIslandImages\Dolphins.png" />
+    <Content Include="Assets\DayTours\PhilipIslandImages\PengLogo.png" />
+    <Content Include="Assets\DayTours\PhilipIslandImages\PenguinSmall.png" />
+    <Content Include="Assets\DayTours\PhilipIslandImages\PhilipIslandmain.png" />
+    <Content Include="Assets\DayTours\PhilipIslandImages\PhilipIslandmain2.png" />
+    <Content Include="Assets\DayTours\PhilipIslandImages\Seal.png" />
+    <Content Include="Assets\DayTours\PhilipIslandImages\whales.png" />
+    <Content Include="Assets\DayTours\YarraValley\GreenBaloon.png" />
+    <Content Include="Assets\DayTours\YarraValley\Logo.png" />
+    <Content Include="Assets\DayTours\YarraValley\Puffing-billy.png" />
+    <Content Include="Assets\DayTours\YarraValley\TulipGardens.png" />
+    <Content Include="Assets\DayTours\YarraValley\Vinary.png" />
+    <Content Include="Assets\DayTours\YarraValley\Wine.png" />
+    <Content Include="Assets\DayTours\YarraValley\YarraRanges.png" />
+    <Content Include="Assets\DayTours\YarraValley\yvbaloon.png" />
+    <Content Include="Assets\DayTours\YarraValley\yvsmall.png" />
+    <Content Include="Assets\Events\AFL\bulldogs.jpg" />
+    <Content Include="Assets\Events\AFL\Bulldogs.png" />
+    <Content Include="Assets\Events\AFL\cup2.png" />
+    <Content Include="Assets\Events\AFL\Hawks.png" />
+    <Content Include="Assets\Events\AFL\Hawksyear.jpg" />
+    <Content Include="Assets\Events\AFL\Logo.png" />
+    <Content Include="Assets\Events\AFL\Mcg.png" />
+    <Content Include="Assets\Events\AFL\Sherin.png" />
+    <Content Include="Assets\Events\AFL\Sherin2.png" />
+    <Content Include="Assets\Events\AusOpen\AusOpenImage.png" />
+    <Content Include="Assets\Events\AusOpen\Court.png" />
+    <Content Include="Assets\Events\AusOpen\DayCourt.png" />
+    <Content Include="Assets\Events\AusOpen\Racket.png" />
+    <Content Include="Assets\Events\AusOpen\RodLaverArena.png" />
+    <Content Include="Assets\Events\AusOpen\tennisball.png" />
+    <Content Include="Assets\Events\AusOpen\Trophy.png" />
+    <Content Include="Assets\Events\Formula1\CityView.png" />
+    <Content Include="Assets\Events\Formula1\F1MelbStart.png" />
+    <Content Include="Assets\Events\Formula1\F1SilverCar.png" />
+    <Content Include="Assets\Events\Formula1\Formula1Large.png" />
+    <Content Include="Assets\Events\Formula1\Logo.png" />
+    <Content Include="Assets\Events\Formula1\Redbull.png" />
+    <Content Include="Assets\Events\McgLarge.png" />
+    <Content Include="Assets\Events\MelbourneCup\Flemington.png" />
+    <Content Include="Assets\Events\MelbourneCup\Logo.png" />
+    <Content Include="Assets\Events\MelbourneCup\MakybeDiva.png" />
+    <Content Include="Assets\Events\MelbourneCup\MelbourneCup.png" />
+    <Content Include="Assets\Events\MelbourneCup\MelbourneCupLarge.png" />
+    <Content Include="Assets\Events\MelbourneCup\melbourneCupSmall.png" />
+    <Content Include="Assets\Events\MelbourneCup\Race.png" />
+    <Content Include="Assets\Events\MelbourneCup\Stadium.png" />
+    <Content Include="Assets\GeneralImages\AusOpenImage.png" />
+    <Content Include="Assets\GeneralImages\cup2.png" />
+    <Content Include="Assets\GeneralImages\Formula1Large.png" />
+    <Content Include="Assets\GeneralImages\GreatOceanRd12.png" />
+    <Content Include="Assets\GeneralImages\melbcity.png" />
+    <Content Include="Assets\GeneralImages\melbourneCupSmall.png" />
+    <Content Include="Assets\GeneralImages\Princebrdg2.png" />
+    <Content Include="Assets\GeneralImages\RoyalBotanical4.png" />
+    <Content Include="Assets\GeneralImages\RoyalBotanicalLarge.png" />
+    <Content Include="Assets\City\Crown\Bowling.png" />
+    <Content Include="Assets\City\Crown\Casino.png" />
+    <Content Include="Assets\City\Crown\Cinemas.png" />
+    <Content Include="Assets\City\Crown\Entrance.jpg" />
+    <Content Include="Assets\City\Crown\Crown.png" />
+    <Content Include="Assets\City\Crown\Logo.png" />
+    <Content Include="Assets\City\Crown\Games.png" />
+    <Content Include="Assets\City\FlindersStreet\FedSquare.png" />
+    <Content Include="Assets\City\FlindersStreet\FlindersStreetLarge.png" />
+    <Content Include="Assets\City\FlindersStreet\FlindersStreetSmall.png" />
+    <Content Include="Assets\City\FlindersStreet\PrinceBrdg.png" />
+    <Content Include="Assets\City\FlindersStreet\Princebrdg2.png" />
+    <Content Include="Assets\City\FlindersStreet\StPaulsCathedralLarge.png" />
+    <Content Include="Assets\City\Market\FruitsVic.png" />
+    <Content Include="Assets\City\Market\MarketPhoto.png" />
+    <Content Include="Assets\City\Market\Merchandise.png" />
+    <Content Include="Assets\City\Market\NightMarket.png" />
+    <Content Include="Assets\City\Market\Market.png" />
+    <Content Include="Assets\City\Market\Stalls.png" />
+    <Content Include="Assets\City\Market\Logo.png" />
+    <Content Include="Assets\City\StKilda\Aclandstreet.png" />
+    <Content Include="Assets\City\StKilda\LunaParkInside.png" />
+    <Content Include="Assets\City\StKilda\LunaParkLarge.png" />
+    <Content Include="Assets\City\StKilda\Logo.png" />
+    <Content Include="Assets\City\StKilda\LunaParkrideon.png" />
+    <Content Include="Assets\City\StKilda\LunaParkRides.png" />
+    <Content Include="Assets\City\StKilda\StKildaBeach.png" />
+    <Content Include="Assets\City\StKilda\StKildaPier.png" />
+    <Content Include="Assets\ParksImages\Aquarium\AquaLarge.png" />
+    <Content Include="Assets\ParksImages\Aquarium\Logo.png" />
+    <Content Include="Assets\ParksImages\Aquarium\Aqualunch.png" />
+    <Content Include="Assets\ParksImages\Aquarium\AquaTunnel.png" />
+    <Content Include="Assets\ParksImages\Aquarium\Croc.png" />
+    <Content Include="Assets\ParksImages\Aquarium\Seahorse.png" />
+    <Content Include="Assets\ParksImages\Aquarium\Turtle.png" />
+    <Content Include="Assets\ParksImages\MelbZoo\Elephant.png" />
+    <Content Include="Assets\ParksImages\MelbZoo\Kangaroos.png" />
+    <Content Include="Assets\ParksImages\MelbZoo\Kaolas.png" />
+    <Content Include="Assets\ParksImages\MelbZoo\Logo.png" />
+    <Content Include="Assets\ParksImages\MelbZoo\Tiger.png" />
+    <Content Include="Assets\ParksImages\MelbZoo\ZooEntry.png" />
+    <Content Include="Assets\ParksImages\MelbZoo\zooGiraffes.png" />
+    <Content Include="Assets\ParksImages\Rbn\Logo.png" />
+    <Content Include="Assets\ParksImages\Rbn\PurpleRbn.png" />
+    <Content Include="Assets\ParksImages\Rbn\RbnFountain.png" />
+    <Content Include="Assets\ParksImages\Rbn\RbnSitout.png" />
+    <Content Include="Assets\ParksImages\Rbn\RoyalBotanical.png" />
+    <Content Include="Assets\ParksImages\Rbn\RbnLake.jpg" />
+    <Content Include="Assets\ParksImages\Rbn\Rbn4.png" />
+    <Content Include="Assets\ParksImages\Rbn\RoyalBotanicalLarge.png" />
+    <Content Include="Assets\ParksImages\Rbn\ShrineSmall.png" />
+    <Content Include="Assets\ParksImages\WerribeeZoo\Entrance.png" />
+    <Content Include="Assets\ParksImages\WerribeeZoo\lion.png" />
+    <Content Include="Assets\ParksImages\WerribeeZoo\Logo.png" />
+    <Content Include="Assets\ParksImages\WerribeeZoo\Mansion.png" />
+    <Content Include="Assets\ParksImages\WerribeeZoo\River.png" />
+    <Content Include="Assets\ParksImages\WerribeeZoo\giraf.png" />
+    <Content Include="Assets\ParksImages\WerribeeZoo\WzZeebra.png" />
+    <Content Include="Assets\pushpin.png" />
+    <Content Include="Assets\RoyalBotanicalLarge.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.png" />
+    <Content Include="Assets\Square44x44Logo.png" />
+    <Content Include="Assets\Wide310x150Logo.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-2001.png" />
+    <Content Include="Assets\StoreLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Aquarium.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DayTours.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dbAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteFavourites.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Favourites.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GetDirections.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HelpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InTheCity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemAfl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemAusOpen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemBotanicalGarden.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemCrown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemF1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemFlindersStreet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemGreatOceanDrive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemMarket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemMelbCup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemMelbZoo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemMountBuller.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ItemPhilipIsland.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemStkilda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemWerribeeZoo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MelbourneMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ParksAndGarderns.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SearchResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="viewFavourites.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YarraValley.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.19.3">
+      <Name>SQLite for Universal Windows Platform</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="GatewayMelbourne.itemCrown"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GatewayMelbourne"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   mc:Ignorable="d" Style="{StaticResource ResourceKey=PageSize}" >
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="1681*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".25*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="-3,-5,3,5" Grid.ColumnSpan="2">
+            <Image Source="/Assets/City/Crown/Logo.png"  Margin="0,35,0,17"  />
+            <TextBlock x:Name="tblHeader" Text="Crown Casino" FontSize="45" Margin="30" Width="365"/>
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,34"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,34"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,36"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,36"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,35"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,36"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,37"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,37"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,37"  />
+            <Image Source="/Assets/City/Crown/Logo.pngg" Height="30"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,37"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,35"  />
+            <Image Source="/Assets/City/Crown/Logo.png" Margin="0,50,0,35"  />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,29,0,0" HorizontalAlignment="Left" Width="1630" Grid.ColumnSpan="2">
+            <StackPanel  Margin="0,0,50,337" CornerRadius="5" Width="1053">
+                <StackPanel Background="Black" CornerRadius="5">
+
+                    <Image Margin="2" Source="Assets/City/Crown/Crown1.png" Stretch="UniformToFill" Height="400" />
+                </StackPanel>
+                <StackPanel x:Name="pnlitemText" CornerRadius="5" Style="{StaticResource DescStackPanel}">
+                    <StackPanel x:Name="pnlitemInnerText" Style="{StaticResource TextPanel}" CornerRadius="5"  Height="65">
+
+                        <TextBlock  x:Name="tblItemDescription" Style="{StaticResource BodyFont}" Text="Crown Entertainment complex is the place to be if you are looking for entertainment. Crown complex has the biggest Casino in the Southern Hemisphere and one of the biggest in the world. It has 4 luxurious hotels,Ballrooms,Theaters,Shopping,Gaming,Bowling,Restaurants.You name it,It has got it,including a waterfall.Located on the South Bank of Yarra Crown complex is a world in itself."/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Style="{StaticResource ResourceKey=DescStackPanel}" CornerRadius="5" Margin="2,10,872,2" >
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource TextPanel}" CornerRadius="5"  Margin="2,2,0,2" HorizontalAlignment="Left" Width="175" >
+                        <TextBlock  x:Name="tbDirectionsIcon" Tapped="btnGetDirections_Tapped" FontFamily="Segoe MDL2 Assets" Text="&#xE816;" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,1,15,2"/>
+                        <TextBlock x:Name="btnGetDirections" Style="{StaticResource BodyFont}" Text="Get Directions" Tapped="btnGetDirections_Tapped"/>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+            <StackPanel Width="330" Margin="0,0,0,50" >
+
+                <Image Source="/Assets/City/Crown/Entrance.jpg" Style="{StaticResource sideImages}"/>
+                <Image Source="/Assets/City/Crown/Bowling.png" Style="{StaticResource sideImages}" Height="171"/>
+                <Image Source="/Assets/City/Crown/Poker.png" Style="{StaticResource sideImages}"/>
+                <Image Source="/Assets/City/Crown/Cinemas.png" Style="{StaticResource sideImages}" Height="171"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
