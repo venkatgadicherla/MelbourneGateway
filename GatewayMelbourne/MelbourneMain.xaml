@@ -13,84 +13,84 @@
             <RowDefinition Height="609*"></RowDefinition>
             <RowDefinition Height="268*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Name="tbMainHeading" Text="Melbourne main" Margin="0,0,474,177"/>
+   
         <StackPanel Name="TopRowPanel" Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10" >
 
 
-            <StackPanel Background="black" Margin="10,20,10,0" CornerRadius="5" Width="147">
+            <StackPanel Name="panelAusOpen" Background="black" Margin="10,20,10,0" CornerRadius="5" Width="147" Tapped="imgAusopen_Tapped" ToolTipService.ToolTip="Australian Open" ToolTipService.Placement="Top" >
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
 
-                    <Image x:Name="imgAusopen" Source="Assets/GeneralImages/AusOpenImage.png" Height="132"  />
+                    <Image x:Name="imgAusopen" Source="Assets/Events/AusOpen/AusOpenImage.png" Height="132"   />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="Cup" Background="black"  CornerRadius="5" Width="147" Margin="0,20,0,0">
+            <StackPanel  Name="Cup" Background="black"  CornerRadius="5" Width="147" Margin="0,20,0,0" Tapped="Cup_Tapped" ToolTipService.ToolTip="AFl grand Final" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgAusopen1" Source="Assets/GeneralImages/cup2.png" Height="130"  />
+                    <Image x:Name="imgAusopen1" Source="Assets/Events/AFL/cup2.png" Height="130"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="F1panel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0">
+            <StackPanel  Name="F1panel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0" Tapped="F1panel_Tapped" ToolTipService.ToolTip="Formula 1" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgF1" Source="Assets/GeneralImages/Formula1Large.png" Height="130"  />
+                    <Image x:Name="imgF1" Source="Assets/Events/Formula1/Formula1Large.png" Height="130"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="MelbourneCuppanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0">
+            <StackPanel  Name="MelbourneCuppanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0" Tapped="MelbourneCuppanel_Tapped" ToolTipService.ToolTip="Melbourne Cup" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgMelbCup" Source="Assets/GeneralImages/melbourneCupSmall.png" Height="130"  />
+                    <Image x:Name="imgMelbCup" Source="Assets/Events/MelbourneCup/melbourneCupSmall.png" Height="130"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="Flinderstreetpanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0">
+            <StackPanel  Name="LightHousePanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0" Tapped="LightHousePanel_Tapped" ToolTipService.ToolTip="Great OCean Rd" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="FlindersStreet" Source="Assets/LandMarks/FlindersStreetSmall.png" Height="130"  />
+                    <Image x:Name="imgGrtOCrd" Source="Assets/DayTours/GreatOceanRd/Lighthouse.png" Height="130"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="Parliamentpanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0">
+            <StackPanel  Name="Ropewaypanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0" Tapped="Ropewaypanel_Tapped" ToolTipService.ToolTip="Mount Buller" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgParliaMent" Source="Assets/LandMarks/ParliamentSmall.png" Height="130"  />
+                    <Image x:Name="imgRopeway" Source="Assets/DayTours/MtBullerImages/Ropeway.png" Height="124"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="ShrinePanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0">
+            <StackPanel  Name="AquaPanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0" Tapped="AquaPanel_Tapped" ToolTipService.ToolTip="Aquarium" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgShrine" Source="Assets/LandMarks/ShrineSmall.png" Height="120"  />
+                    <Image x:Name="imgSeahorsee" Source="Assets/ParksImages/Aquarium/Croc.png" Height="120"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="StPaulsPanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0">
+            <StackPanel  Name="YarraPanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0" Tapped="YarraPanel_Tapped" ToolTipService.ToolTip="Yarra Valley" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgStPauls" Source="Assets/LandMarks/StPaulsCathedralSmall.png" Height="130"  />
+                    <Image x:Name="imgYarraValley" Source="Assets/DayTours/YarraValley/yvsmall.png" Height="130"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="p1" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0">
+            <StackPanel  Name="PhilipPanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0" Tapped="PhilipPanel_Tapped" ToolTipService.ToolTip="Phillip Island" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgStPauls2" Source="Assets/LandMarks/StPaulsCathedralSmall.png" Height="130"  />
+                    <Image x:Name="imgPenguin" Source="Assets/DayTours/PhilipIslandImages/PenguinSmall.png" Height="120" Margin="0,10"  />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="p2" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0">
+            <StackPanel  Name="LunaParkPanel" Background="black"  CornerRadius="5" Width="147" Margin="10,20,0,0" Tapped="LunaParkPanel_Tapped" ToolTipService.ToolTip="LunaPark-StKilda" ToolTipService.Placement="Top"> 
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgStPauls1" Source="Assets/LandMarks/StPaulsCathedralSmall.png" Height="130"  />
+                    <Image x:Name="imgLunaPark" Source="Assets/City/StKilda/Logo.png" Height="130" Margin="0,10"  />
                 </StackPanel>
             </StackPanel>
         </StackPanel>
         <StackPanel Name="panelMiddle" Grid.Row="1" Orientation="Horizontal"  Margin="5,51,-8,0" Grid.RowSpan="2"  VerticalAlignment="Top" >
 
-            <StackPanel  Name="Mcg" Background="black"  CornerRadius="5" Margin="10,0,0,0" Width="382" VerticalAlignment="Top">
+            <StackPanel  Name="panelEvents" Background="black" Tapped="panelEvents_Tapped" CornerRadius="5" Margin="10,0,0,0" Width="382" VerticalAlignment="Top" ToolTipService.ToolTip="Events-MCG" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgMcgLarge" Source="Assets/Events/McgLarge.png" Style="{ StaticResource imageStyle}"   />
+                    <Image x:Name="imgMcgLarge" Source="Assets/Events/AFL/Mcg.png" Style="{ StaticResource imageStyle}"   />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Name="panelFlindersStreet" Background="black"  CornerRadius="5" Margin="10,0,0,0" Width="382" VerticalAlignment="Top">
+            <StackPanel  Name="panelIntheCity" Background="black" Tapped="panelIntheCity_Tapped" CornerRadius="5" Margin="10,0,0,0" Width="382" VerticalAlignment="Top" ToolTipService.ToolTip="IntheCity-Princessbridge" ToolTipService.Placement="Top">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgFlinderstreetLarge" Source="Assets/GeneralImages/Princebrdg2.png" Style="{ StaticResource imageStyle}"   />
+                    <Image x:Name="imgFlinderstreetLarge" Source="Assets/City/FlindersStreet/Princebrdg2.png" Style="{ StaticResource imageStyle}"   />
                 </StackPanel>
 
             </StackPanel>
-            <StackPanel  Name="Parliament" Background="black"  CornerRadius="5" Margin="10,0,0,0" Width="382" VerticalAlignment="Top" >
-                <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgParliamentLarge" Source="Assets/GeneralImages/RoyalBotanicalLarge.png" Style="{ StaticResource imageStyle}"    />
+            <StackPanel  Name="panelParksAndGardens" Background="black" Tapped="panelParksAndGardens_Tapped" CornerRadius="5" Margin="10,0,0,0" Width="382" VerticalAlignment="Top"  ToolTipService.ToolTip="ParksAndGardens-RBN" ToolTipService.Placement="Top">
+                <StackPanel Margin="5,5,5,5" CornerRadius="10"> 
+                    <Image x:Name="imgParliamentLarge" Source="Assets/ParksImages/Rbn/RoyalBotanicalLarge.png" Style="{ StaticResource imageStyle}"    />
                 </StackPanel>
                 
             </StackPanel>
-            <StackPanel  Name="GreatOceanRdPanel" Background="black"  CornerRadius="5" Margin="10,0,0,0" Width="384"  VerticalAlignment="Top">
+            <StackPanel  Name="panelDayTrips" Background="black"  Tapped="panelDayTrips_Tapped" CornerRadius="5" Margin="10,0,0,0" Width="384"  VerticalAlignment="Top" ToolTipService.ToolTip="DayTrips-GreatOceanRd">
                 <StackPanel Margin="5,5,5,5" CornerRadius="10">
-                    <Image x:Name="imgGreatOceanRd" Source="Assets/GeneralImages/GreatOceanRd12.png" Style="{ StaticResource imageStyle}"   />
+                    <Image x:Name="imgGreatOceanRd" Source="Assets/DayTours/GreatOceanrd/12Apostles.png" Style="{ StaticResource imageStyle}"   />
                 </StackPanel>
             </StackPanel>
         </StackPanel>

@@ -51,7 +51,7 @@
                     <Image Margin="2,2,2,2" Source="Assets/Events/MelbourneCup/Race.png" Stretch="UniformToFill" Height="487"  />
                 </StackPanel>
                 <StackPanel CornerRadius="5"  Style="{StaticResource DescStackPanel}" Margin="10" Height="99" >
-                    <StackPanel Background="White" CornerRadius="5" Style="{StaticResource TextPanel}" Height="105">
+                    <StackPanel Background="White" CornerRadius="5" Style="{StaticResource TextPanel}" Height="94">
 
                         <TextBlock Style="{StaticResource BodyFont}" Text="The Melbourne Cup is Australia's most prestigious annual Thoroughbred horse race, 'The Race that stops the nation' as it is dubbed.This is the pinnacle event of the Spring Racing Carnival in Australia.People and racing enthusiasists from all over the globe come to watch this race.Melbourne Cup takes place on the first Tuesday of November and not be missed if you are in Melbourne."  Margin="3,0,0,0"/>
                     </StackPanel>

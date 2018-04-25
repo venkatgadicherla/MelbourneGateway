@@ -24,7 +24,8 @@ namespace GatewayMelbourne
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class DeleteFavourites : Page
-    {
+
+    {// The main functionality of this page is to enable the user to delete favourites one by one or delete them all
         public DeleteFavourites()
         {
             this.InitializeComponent();
@@ -45,82 +46,114 @@ namespace GatewayMelbourne
         TextBlock tblFavouriteHdr = new TextBlock();
         StackPanel panelLocationToDelete = new StackPanel();
         Location deleteLocation ;
-        //Location locationlist ;
 
-        private void loadFavourite(StackPanel panelFavourite)
+
+        private async void loadFavourite(StackPanel panelFavourite)
         {
-            App.isFavouritePage = true;
-            panelFavourite.AllowDrop = false;
-            //StackPanel panelLocationToDelete = new StackPanel();
-            //Location deleteLocation = new Location();
-            var locationlist = App.conn.Table<Location>();
-            noOfFavourites = 0;
-            foreach (var dblocation in locationlist)
+            // This method loads the favourite locations onto the page.
+            //It also involves in  page design adding a stack panel and adding elements of favourite location onto the page
+            try
             {
+                App.isFavouritePage = true;
+                panelFavourite.AllowDrop = false;
 
-                StackPanel pnlInnerLocation = new StackPanel();
-                pnlInnerLocation.Orientation = Orientation.Horizontal;
-                pnlInnerLocation.Background = new SolidColorBrush(Colors.Orange);
-                pnlInnerLocation.AllowDrop = false;
-
-
-
-                pnlInnerLocation.Margin = new Thickness(10, 5, 5, 10);
-                pnlInnerLocation.CornerRadius = new CornerRadius(10);
-                pnlInnerLocation.CanDrag = true;
-
-
-                if (dblocation.favourite.ToLower().CompareTo("true") == 0)
+                var locationlist = App.conn.Table<Location>();
+                noOfFavourites = 0;
+                foreach (var dblocation in locationlist)
                 {
 
-                    Image imgLocation = new Image();
-                    imgLocation.Margin = new Thickness(5, 5, 5, 5);
-                    imgLocation.Height = 25;
-                    imgLocation.Width = 20;
-                    imgLocation.Source = new BitmapImage(
-             new Uri("ms-appx:///Assets/" + dblocation.smallimage, UriKind.Absolute));
-
-                    TextBlock tblImageDescription = new TextBlock();
-                    TextBlock tblImageCategory = new TextBlock();
-
-                    tblImageDescription.Margin = new Thickness(5, 5, 5, 5);
-                    tblImageDescription.Text = dblocation.locationName;
-                    tblImageCategory.Text = " in " + dblocation.category;
-                    tblImageCategory.Margin = new Thickness(5);
-                    int locationId = dblocation.locationId;
+                    StackPanel pnlInnerLocation = new StackPanel();
+                    pnlInnerLocation.Orientation = Orientation.Horizontal;
+                    pnlInnerLocation.Background = new SolidColorBrush(Colors.Orange);
+                    pnlInnerLocation.AllowDrop = false;
 
 
-                    pnlInnerLocation.Children.Add(imgLocation);
-                    pnlInnerLocation.Children.Add(tblImageDescription);
-                    pnlInnerLocation.Children.Add(tblImageCategory);
-                    panelFavourite.Children.Add(pnlInnerLocation);
 
-                    // //When the location to be deleted from favourites and when it is dragged onto recycle bin Icon the following code executes
-                    pnlInnerLocation.DragStarting += delegate
+                    pnlInnerLocation.Margin = new Thickness(10, 5, 5, 10);
+                    pnlInnerLocation.CornerRadius = new CornerRadius(10);
+                    pnlInnerLocation.CanDrag = true;
+
+
+                    if (dblocation.favourite.ToLower().CompareTo("true") == 0)
                     {
 
-                        panelLocationToDelete = pnlInnerLocation;
-                        deleteLocation = dblocation;
-                    };
+                        Image imgLocation = new Image();
+                        imgLocation.Margin = new Thickness(5, 5, 5, 5);
+                        imgLocation.Height = 25;
+                        imgLocation.Width = 20;
+                        imgLocation.Source = new BitmapImage(
+                 new Uri("ms-appx:///Assets/" + dblocation.smallimage, UriKind.Absolute));
 
-                    noOfFavourites++;
+                        TextBlock tblImageDescription = new TextBlock();
+                        TextBlock tblImageCategory = new TextBlock();
+
+                        tblImageDescription.Margin = new Thickness(5, 5, 5, 5);
+                        tblImageDescription.Text = dblocation.locationName;
+                        tblImageCategory.Text = " in " + dblocation.category;
+                        tblImageCategory.Margin = new Thickness(5);
+                        int locationId = dblocation.locationId;
 
 
-                    //tblBin.DragEnter += delegate
-                    //{
+                        pnlInnerLocation.Children.Add(imgLocation);
+                        pnlInnerLocation.Children.Add(tblImageDescription);
+                        pnlInnerLocation.Children.Add(tblImageCategory);
+                        panelFavourite.Children.Add(pnlInnerLocation);
 
-                    //    if (panelFavourite.Children.Contains(panelLocationToDelete))
-                    //    {
-                    //        panelFavourite.Children.Remove(panelLocationToDelete);
-                    //        deleteLocation.favourite = "false";
-                    //        App.conn.Update(deleteLocation);
-                    //    }
-                    //};
+                        // //When the location to be deleted from favourites and when it is dragged onto recycle bin Icon the following code executes
 
+                        pnlInnerLocation.DragStarting += delegate
+                        {
+
+                            panelLocationToDelete = pnlInnerLocation;//here panelLocationToDelete is a global variable and is accessed later to delete the panel
+                            deleteLocation = dblocation;// here deleteLocation is a global variable and is accessed later in the page to set location favourite status to false.
+                           // App.tempFaavouriteList.Remove(deleteLocation);
+                        };
+
+                        noOfFavourites++;
+
+
+
+
+                    }
+                }
+            }
+            catch (Exception exp)
+            {
+                var msgExp = new MessageDialog(exp.ToString());
+                await msgExp.ShowAsync();
+            }
+
+        }
+        private async void tblBin_DragEnter(object sender, DragEventArgs e)
+        {
+            // This method is used to delete a location from the Favourites panel and 
+            try
+            {
+
+                if (panelFavourite.Children.Contains(panelLocationToDelete))
+                {
+
+                    panelFavourite.Children.Remove(panelLocationToDelete);//Here the panelLocation which is set when Location panel was dragged is used to delete the particular panel
+                    deleteLocation.favourite = "false";
+                    foreach(Location favLocation in App.tempFavouriteList)
+                    {
+                        if(favLocation.locationId==deleteLocation.locationId)
+                        {
+                            App.tempFavouriteList.Remove(favLocation);
+                            break;
+                        }
+                    }
+                    
+                    App.conn.Update(deleteLocation);
 
                 }
             }
+            catch (Exception exp)
+            {
+                var msgExp = new MessageDialog(exp.ToString());
+                await msgExp.ShowAsync();
             }
+        }
 
         private void Page_Loading(FrameworkElement sender, object args)
         {
@@ -141,21 +174,10 @@ namespace GatewayMelbourne
             }
             panelFavourite.Children.Clear();
             panelFavourite.Children.Add(headingPanel);
-            App.tempFaavouriteList.Clear();
+            App.tempFavouriteList.Clear();
         }
 
-        private  void tblBin_DragEnter(object sender, DragEventArgs e)
-        {
-           
-            if (panelFavourite.Children.Contains(panelLocationToDelete))
-            {
-               
-                panelFavourite.Children.Remove(panelLocationToDelete);
-                deleteLocation.favourite = "false";
-                App.conn.Update(deleteLocation);
-               
-            }
-        }
+       
     }
 }
 

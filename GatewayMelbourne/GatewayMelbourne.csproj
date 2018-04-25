@@ -101,9 +101,6 @@
     <Compile Include="DayTours.xaml.cs">
       <DependentUpon>DayTours.xaml</DependentUpon>
     </Compile>
-    <Compile Include="dbAdmin.xaml.cs">
-      <DependentUpon>dbAdmin.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DbHelperClass.cs" />
     <Compile Include="DeleteFavourites.xaml.cs">
       <DependentUpon>DeleteFavourites.xaml</DependentUpon>
@@ -196,12 +193,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\City\Crown\Crown1.png" />
-    <Content Include="Assets\City\Crown\Crown13.png" />
-    <Content Include="Assets\City\Crown\CrownDay.png" />
-    <Content Include="Assets\City\Crown\CrownLarge2.png" />
     <Content Include="Assets\City\Crown\Poker.png" />
     <Content Include="Assets\City\FlindersStreet\ArtsCentre.png" />
     <Content Include="Assets\City\FlindersStreet\Logo.png" />
+    <Content Include="Assets\City\FlindersStreet\StPaulsCathedralLarge1.png" />
+    <Content Include="Assets\City\StKilda\aclandstreet.png" />
     <Content Include="Assets\City\StKilda\PalaiTheatre.png" />
     <Content Include="Assets\DayTours\GreatOceanRd\12Apostles.png" />
     <Content Include="Assets\DayTours\GreatOceanRd\AppBay.png" />
@@ -214,7 +210,6 @@
     <Content Include="Assets\DayTours\MtBullerImages\FullView.png" />
     <Content Include="Assets\DayTours\MtBullerImages\Mt.png" />
     <Content Include="Assets\DayTours\MtBullerImages\MtBuller.png" />
-    <Content Include="Assets\DayTours\MtBullerImages\MtbullerEntrace.png" />
     <Content Include="Assets\DayTours\MtBullerImages\MtBullerlogo.png" />
     <Content Include="Assets\DayTours\MtBullerImages\Ropeway.png" />
     <Content Include="Assets\DayTours\MtBullerImages\SideView.png" />
@@ -231,17 +226,12 @@
     <Content Include="Assets\DayTours\YarraValley\TulipGardens.png" />
     <Content Include="Assets\DayTours\YarraValley\Vinary.png" />
     <Content Include="Assets\DayTours\YarraValley\Wine.png" />
-    <Content Include="Assets\DayTours\YarraValley\YarraRanges.png" />
-    <Content Include="Assets\DayTours\YarraValley\yvbaloon.png" />
     <Content Include="Assets\DayTours\YarraValley\yvsmall.png" />
     <Content Include="Assets\Events\AFL\bulldogs.jpg" />
-    <Content Include="Assets\Events\AFL\Bulldogs.png" />
     <Content Include="Assets\Events\AFL\cup2.png" />
     <Content Include="Assets\Events\AFL\Hawks.png" />
-    <Content Include="Assets\Events\AFL\Hawksyear.jpg" />
     <Content Include="Assets\Events\AFL\Logo.png" />
     <Content Include="Assets\Events\AFL\Mcg.png" />
-    <Content Include="Assets\Events\AFL\Sherin.png" />
     <Content Include="Assets\Events\AFL\Sherin2.png" />
     <Content Include="Assets\Events\AusOpen\AusOpenImage.png" />
     <Content Include="Assets\Events\AusOpen\Court.png" />
@@ -256,37 +246,23 @@
     <Content Include="Assets\Events\Formula1\Formula1Large.png" />
     <Content Include="Assets\Events\Formula1\Logo.png" />
     <Content Include="Assets\Events\Formula1\Redbull.png" />
-    <Content Include="Assets\Events\McgLarge.png" />
     <Content Include="Assets\Events\MelbourneCup\Flemington.png" />
     <Content Include="Assets\Events\MelbourneCup\Logo.png" />
     <Content Include="Assets\Events\MelbourneCup\MakybeDiva.png" />
     <Content Include="Assets\Events\MelbourneCup\MelbourneCup.png" />
-    <Content Include="Assets\Events\MelbourneCup\MelbourneCupLarge.png" />
     <Content Include="Assets\Events\MelbourneCup\melbourneCupSmall.png" />
     <Content Include="Assets\Events\MelbourneCup\Race.png" />
     <Content Include="Assets\Events\MelbourneCup\Stadium.png" />
-    <Content Include="Assets\GeneralImages\AusOpenImage.png" />
-    <Content Include="Assets\GeneralImages\cup2.png" />
-    <Content Include="Assets\GeneralImages\Formula1Large.png" />
-    <Content Include="Assets\GeneralImages\GreatOceanRd12.png" />
-    <Content Include="Assets\GeneralImages\melbcity.png" />
-    <Content Include="Assets\GeneralImages\melbourneCupSmall.png" />
-    <Content Include="Assets\GeneralImages\Princebrdg2.png" />
-    <Content Include="Assets\GeneralImages\RoyalBotanical4.png" />
-    <Content Include="Assets\GeneralImages\RoyalBotanicalLarge.png" />
     <Content Include="Assets\City\Crown\Bowling.png" />
-    <Content Include="Assets\City\Crown\Casino.png" />
     <Content Include="Assets\City\Crown\Cinemas.png" />
     <Content Include="Assets\City\Crown\Entrance.jpg" />
     <Content Include="Assets\City\Crown\Crown.png" />
     <Content Include="Assets\City\Crown\Logo.png" />
     <Content Include="Assets\City\Crown\Games.png" />
     <Content Include="Assets\City\FlindersStreet\FedSquare.png" />
-    <Content Include="Assets\City\FlindersStreet\FlindersStreetLarge.png" />
     <Content Include="Assets\City\FlindersStreet\FlindersStreetSmall.png" />
     <Content Include="Assets\City\FlindersStreet\PrinceBrdg.png" />
     <Content Include="Assets\City\FlindersStreet\Princebrdg2.png" />
-    <Content Include="Assets\City\FlindersStreet\StPaulsCathedralLarge.png" />
     <Content Include="Assets\City\Market\FruitsVic.png" />
     <Content Include="Assets\City\Market\MarketPhoto.png" />
     <Content Include="Assets\City\Market\Merchandise.png" />
@@ -294,11 +270,8 @@
     <Content Include="Assets\City\Market\Market.png" />
     <Content Include="Assets\City\Market\Stalls.png" />
     <Content Include="Assets\City\Market\Logo.png" />
-    <Content Include="Assets\City\StKilda\Aclandstreet.png" />
-    <Content Include="Assets\City\StKilda\LunaParkInside.png" />
     <Content Include="Assets\City\StKilda\LunaParkLarge.png" />
     <Content Include="Assets\City\StKilda\Logo.png" />
-    <Content Include="Assets\City\StKilda\LunaParkrideon.png" />
     <Content Include="Assets\City\StKilda\LunaParkRides.png" />
     <Content Include="Assets\City\StKilda\StKildaBeach.png" />
     <Content Include="Assets\City\StKilda\StKildaPier.png" />
@@ -333,7 +306,6 @@
     <Content Include="Assets\ParksImages\WerribeeZoo\giraf.png" />
     <Content Include="Assets\ParksImages\WerribeeZoo\WzZeebra.png" />
     <Content Include="Assets\pushpin.png" />
-    <Content Include="Assets\RoyalBotanicalLarge.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.png" />
@@ -343,7 +315,6 @@
     <Content Include="Assets\Wide310x150Logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\SplashScreen.scale-2001.png" />
     <Content Include="Assets\StoreLogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -358,10 +329,6 @@
     <Page Include="DayTours.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="dbAdmin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeleteFavourites.xaml">
       <SubType>Designer</SubType>

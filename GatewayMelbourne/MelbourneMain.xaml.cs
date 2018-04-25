@@ -29,22 +29,82 @@ namespace GatewayMelbourne
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //var mainImages = App.conn.Table <App.Locations>();
-            //TextBlock mainImage = new TextBlock();
+            
+        }
 
-            //foreach (var tb in mainImages)
-            //{
-            //    mainImage.Text+= tb.locationName;
-            //}
-            //panelmelbourneMain.Children.Add(mainImage);
-            if (App.myTheme == "Light")
-            {
-                Frame.RequestedTheme = ElementTheme.Light;
-            }
-            else if (App.myTheme == "Dark")
-            {
-                Frame.RequestedTheme = ElementTheme.Dark;
-            }
+        private void imgAusopen_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(itemAusOpen));
+        }
+
+        private void Cup_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(itemAfl));
+        }
+
+        private void F1panel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(itemF1));
+        }
+
+        private void MelbourneCuppanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(itemMelbCup));
+        }
+
+        private void LightHousePanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(itemGreatOceanDrive));
+        }
+
+        private void Ropewaypanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(itemMountBuller));
+        }
+
+        //private void imgRopeway_Tapped(object sender, TappedRoutedEventArgs e)
+        //{
+
+        //}
+
+        private void AquaPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Aquarium));
+        }
+
+        private void YarraPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(YarraValley));
+        }
+
+        private void PhilipPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ItemPhilipIsland));
+        }
+
+        private void LunaParkPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(itemStkilda));
+        }
+
+        private void panelEvents_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Events));
+        }
+
+        private void panelIntheCity_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(InTheCity));
+        }
+
+        private void panelParksAndGardens_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ParksAndGarderns));
+        }
+
+        private void panelDayTrips_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(DayTours));
         }
     }
 }

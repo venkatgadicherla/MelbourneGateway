@@ -39,8 +39,7 @@
                 <StackPanel Name="pnlitemText" CornerRadius="5" Style="{StaticResource DescStackPanel}">
                     <StackPanel Name="pnlitemInnerText" Style="{StaticResource TextPanel}" CornerRadius="5"  Height="65">
 
-                        <TextBlock  Name="tblItemDescription" Style="{StaticResource BodyFont}" Text="Whether you love a drive or serene nature or rugged sea sides Great Ocean Road  on the South West Coast of Victoria is the perfect 
-                                    destination.Only 3 hours drive from Melbourne is a place not to be missed if you are visiting Melbourne"/>
+                        <TextBlock  Name="tblItemDescription" Style="{StaticResource BodyFont}" Text="Whether you love a drive or serene nature or rugged sea sides Great Ocean Road  on the South West Coast of Victoria is the perfect destination.Only 3 hours drive from Melbourne is a place not to be missed if you are visiting Melbourne.Main atractions include.Great Ocean Rd,12 Apostles,unspoiled beaches,Port Campbell,Apollo bay,Otways national park"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Style="{StaticResource ResourceKey=DescStackPanel}" CornerRadius="5" Margin="2,10,872,2" >

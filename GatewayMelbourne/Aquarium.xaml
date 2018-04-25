@@ -12,7 +12,7 @@
             <RowDefinition Height=".25*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFEDF5F5">
             <Image Source="/Assets/ParksImages/Aquarium/Logo.png" Height="60"  >
 
             </Image>
@@ -28,7 +28,7 @@
             <Image Source="/Assets/ParksImages/Aquarium/Logo.png" Height="30"  />
             <Image Source="/Assets/ParksImages/Aquarium/Logo.png" Height="30"  />
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,29,0,-6" HorizontalAlignment="Left" Width="1796">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,29,0,-6" HorizontalAlignment="Left" Width="1796" Background="#FFF8FDFD">
             <StackPanel  Margin="0,0,50,337" CornerRadius="5" Width="1053">
                 <StackPanel Background="Black" CornerRadius="5">
                     <Image Margin="2,2,2,2" Source="Assets/ParksImages/Aquarium/Aqualunch.png" Stretch="UniformToFill" Height="400" />

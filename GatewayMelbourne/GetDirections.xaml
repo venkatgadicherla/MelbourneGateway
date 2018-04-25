@@ -10,26 +10,27 @@
 
     <StackPanel Orientation="Horizontal">
         <StackPanel x:Name="panelLeft" Width="450" >
-            <StackPanel>
-                <TextBlock x:Name="tbdirectionsHeader" Text="Get Directions "   HorizontalAlignment="Left"  TextWrapping="Wrap"  VerticalAlignment="Top" />
-            </StackPanel>
+            
             <ScrollViewer  x:Name="scviewLocations" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible" Height="700" Margin="0,0,35,0">
                 <StackPanel x:Name="panelLocations"  AllowDrop="False" Background="Beige" Height="Auto" Width="400" CornerRadius="30"  >
                     <StackPanel x:Name="LocationsHeader" Margin="61,10,74,20" AllowDrop="False" Background="OrangeRed" CornerRadius="10">
 
-                        <TextBlock x:Name="tblLocationHeader" Text="All Locations" AllowDrop="False" SelectionHighlightColor="#FFF0F7DF" Margin="86,10,83,10" FontFamily="Comic Sans MS" Foreground="White" />
+                        <TextBlock x:Name="tblLocationHeader" Text="Drag n drop Locations on to map" AllowDrop="False" SelectionHighlightColor="#FFF0F7DF" Margin="20,10,7,10" FontFamily="Comic Sans MS" Foreground="White" />
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
 
-            <Button x:Name="btnGetDirections" Content="GetDirections" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="btnGetDirections_Click" Margin="30" />
-
-            <Button x:Name="btnClearPins" Content="Clear All pins" HorizontalAlignment="Left"   VerticalAlignment="Stretch" Margin="30,10,30,30"  Click="btnClear_Click"/>
-
         </StackPanel>
-        <StackPanel  x:Name="panelMiddle" Margin="40,40,40,35" CornerRadius="5" Background="Black" Width="683">
-            <StackPanel BorderThickness="2"  Margin="5"  Height="auto"  >
-                <Maps:MapControl  x:Name="MelbMap" HorizontalAlignment="Left" AllowDrop="True"  VerticalAlignment="Top" Height="850" Width="671" Loaded="MelbMap_Loaded" MapTapped="MelbMap_MapTapped" RightTapped="MelbMap_RightTapped" BorderThickness="2" RequestedTheme="Light" Margin="0,30,-2,30"  MapServiceToken="CXAvqFaKVGoLmeamM6Rg~2KJHx9Nz1FmT7gvQ6SzjHQ~AowM4g8XFnC0lRwMVX840HqNBNnEARlD-Y4A_NNsnCuPWvPeP7CNaBV5_zblwYlX" DragOver="MelbMap_DragOver"   />
+        <StackPanel  x:Name="panelMiddle" Margin="40,25,40,40" CornerRadius="5" Background="White" Width="700">
+          
+            <StackPanel BorderThickness="2"  Margin="10"  Height="700" Background="OrangeRed"  >
+                <Maps:MapControl  x:Name="MelbMap" HorizontalAlignment="Left" AllowDrop="True" Margin="5" VerticalAlignment="Top" Height="695" Width="671" Loaded="MelbMap_Loaded" MapTapped="MelbMap_MapTapped"  BorderThickness="2" RequestedTheme="Light"  MapServiceToken="CXAvqFaKVGoLmeamM6Rg~2KJHx9Nz1FmT7gvQ6SzjHQ~AowM4g8XFnC0lRwMVX840HqNBNnEARlD-Y4A_NNsnCuPWvPeP7CNaBV5_zblwYlX" DragOver="MelbMap_DragOver"   />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="OrangeRed" Margin="10">
+
+                <Button x:Name="btnGetDirections" Content="GetDirections"   HorizontalAlignment="Left" Background="White" VerticalAlignment="Top" Click="btnGetDirections_Click" Margin="30" />
+
+                <Button x:Name="btnClearPins" Content="Clear All pins" HorizontalAlignment="Left"  Background="White" VerticalAlignment="Stretch" Margin="30"  Click="btnClear_Click" Height="35"/>
             </StackPanel>
 
         </StackPanel>
@@ -39,11 +40,9 @@
 
                     <TextBlock x:Name="tblDirectionsHeader" Text="Directions" AllowDrop="False" SelectionHighlightColor="#FFF0F7DF" Margin="72,10,73,10" FontFamily="Comic Sans MS" Foreground="White" />
                 </StackPanel>
-                <ScrollViewer x:Name="scViewDirections" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible" Height="651"  Width="450" Margin="33,0" >
+                <ScrollViewer x:Name="scViewDirections" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Auto"  Height="651"  Width="450" Margin="33,0" >
                     <StackPanel x:Name="panelLowerDirections">
-                        <!--<TextBlock Name="tblDirections">
-                    </TextBlock>-->
-
+                     
 
                     </StackPanel>
 

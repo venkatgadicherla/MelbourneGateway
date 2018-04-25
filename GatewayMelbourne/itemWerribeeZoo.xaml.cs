@@ -29,7 +29,7 @@ namespace GatewayMelbourne
 
         private void tbDirectionsIcon_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Frame.Navigate(typeof(itemBotanicalGarden),tblHeader.Text);
+            Frame.Navigate(typeof(GetDirections),tblHeader.Text);
         }
     }
 }

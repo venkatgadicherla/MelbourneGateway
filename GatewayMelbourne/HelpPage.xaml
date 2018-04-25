@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel x:Name="DarkTheme" Margin="0,20,0,0">
 
-            <TextBlock Text="Get Help here" Style="{StaticResource itemHeading}"  Width="894" Margin="35,0,779,0"></TextBlock>
+            <TextBlock Text="Get Help here" Style="{StaticResource  pageHeadingStyle}"  Width="894"></TextBlock>
             <ListBox >
                 <ListViewHeaderItem>
                     <TextBlock Text="How to use the get directions page"/>

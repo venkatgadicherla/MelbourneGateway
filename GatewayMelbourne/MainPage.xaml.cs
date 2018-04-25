@@ -24,134 +24,85 @@ namespace GatewayMelbourne
     /// </summary>
     public sealed partial class MainPage : Page
     {
-      MessageDialog MsgForFav;
+        MessageDialog MsgForFav;// This Message dialog is used to direct the navigation when using the Favourites page
         public MainPage()
         {
-            this.InitializeComponent();
+                this.InitializeComponent();
+                MainFrame.Navigate(typeof(MelbourneMain));//The app is directed to Melbourne Main page upon loading.
+
+            //The following code is used to initialize the display of the MessageDialog MsgForFav
             MsgForFav = new MessageDialog("Do you want save the favourites");
-          
-          
-           MsgForFav.Commands.Add(new UICommand(
-            "Save List",
-            new UICommandInvokedHandler(this.CommandInvokedHandler)));
-            MsgForFav.Commands.Add(new UICommand(
-    "Clear List",
-    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+            
+                MsgForFav.Commands.Add(new UICommand("Add and Save",new UICommandInvokedHandler(this.CommandInvokedHandler)));
 
-            MsgForFav.Commands.Add(new UICommand(
-    "Cancel",
-    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+                MsgForFav.Commands.Add(new UICommand( "Discard changes",new UICommandInvokedHandler(this.CommandInvokedHandler)));
 
-            // Set the command that will be invoked by default
-            MsgForFav.DefaultCommandIndex = 0;
+                MsgForFav.Commands.Add(new UICommand("Cancel",new UICommandInvokedHandler(this.CommandInvokedHandler)));
 
-            // Set the command to be invoked when escape is pressed
-            MsgForFav.CancelCommandIndex = 1;
-            MainFrame.Navigate(typeof(MelbourneMain));
+                // Set the command that will be invoked by default
+                MsgForFav.DefaultCommandIndex = 0;
+
+                // Set the command to be invoked when escape is pressed
+                MsgForFav.CancelCommandIndex = 1;
+
+           
         }
+
+        private async void CommandInvokedHandler(IUICommand command)
+        {
+            //This method is used to incorporate the functionality of the different options available in the   MsgForFav MessageDialog
+
+           
+            MessageDialog msg;
+            switch (command.Label)
+            {
+                case "Add and Save":// The following actions take place when Save List 
+                    try
+                    {
+                        foreach (Location favLocation in App.tempFavouriteList)
+                        {
+                            favLocation.favourite = "true";
+                            App.conn.Update(favLocation);
+
+                        }
+                        App.isFavoutiteListSaved = true;
+                        msg = new MessageDialog("Favourites Saved");
+                        await msg.ShowAsync();
+                    }
+                    catch(Exception exp)
+                    {
+                        var msgExp = new MessageDialog(exp.ToString());
+                        await msgExp.ShowAsync();
+                    }
+                    break;
+
+                case "Cancel":// The Following actions take place when Cancel option is selected
+
+                        break;
+
+                case "Discard changes"://The tempFavouriteList is cleared when the Clear List is selected
+
+                    App.tempFavouriteList.Clear();
+
+                    msg = new MessageDialog("The newly added items are discarded");
+                    await msg.ShowAsync();
+                    App.isFavoutiteListSaved = true;
+                    MainFrame.Navigate(typeof(Favourites));
+                    break;
+
+            }
+        }
+
 
         public static explicit operator MainPage(string v)
         {
             throw new NotImplementedException();
         }
 
-        private void HamBurger_Click(object sender, RoutedEventArgs e)
-        {
-            MenuSplitView.IsPaneOpen = !MenuSplitView.IsPaneOpen;
-        }
-
-        private async void tbCategories_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (App.isFavoutiteListSaved)
-            {
-                FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
-            }
-            else if (!App.isFavoutiteListSaved)
-            {
-         
-                await MsgForFav.ShowAsync();
-
-
-            }
-        }
-
-        private async void CommandInvokedHandler(IUICommand command)
-        {
-            //var msg1 = new MessageDialog("The '" + command.Label + "' command has been selected.") ;
-            //await msg1.ShowAsync();
-            int i = 0;
-            MessageDialog msg;
-            switch (command.Label)
-            {
-                case "Save List":
-                    foreach (Location favLocation in App.tempFaavouriteList)
-                    {
-                        favLocation.favourite = "true";
-                        App.conn.Update(favLocation);
-                        i++;
-
-                    }
-                    App.isFavoutiteListSaved = true;
-                    msg= new MessageDialog("no of items updated" + i);
-                    await msg.ShowAsync();
-                    break;
-                case "Cancel":
-                    break;
-                case "Clear List":
-
-                    App.tempFaavouriteList.Clear();
-              
-                    msg = new MessageDialog("Favourite List Cleared");
-                    await msg.ShowAsync();
-                    App.isFavoutiteListSaved = true;
-                    MainFrame.Navigate(typeof(Favourites));
-                    break;
-
-                }
-        }
-
-        private void lbCategorySelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if(lbItem_ViewFavourite.IsSelected)
-            {
-                MainFrame.Navigate(typeof(DayTours));
-
-            }
-            if(lbItem_AddFavourite.IsSelected)
-            {
-               MainFrame.Navigate(typeof(Events));
-            }
-            if(lbItem_DeleteFavourite.IsSelected)
-            {
-                MainFrame.Navigate(typeof(InTheCity));
-            }
-            if(lbItem_Parks.IsSelected)
-            {
-                MainFrame.Navigate(typeof(ParksAndGarderns));
-            }
-        }
-
-
-
-        private async void tb_directions_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (App.isFavoutiteListSaved)
-            {
-                MainFrame.Navigate(typeof(GetDirections));
-            }
-            else
-            {
-                await MsgForFav.ShowAsync();
-            }
-        }
-
-        private void asbSearchBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
-        {
-            
-        }
-
+        //  MainPage Page events start here
         private async void asbSearchBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
+            //This event occurs when Favourites text block is clicked
             if (App.isFavoutiteListSaved)
             {
                 MainFrame.Navigate(typeof(SearchResults), args.QueryText);
@@ -162,7 +113,62 @@ namespace GatewayMelbourne
             }
         }
 
-        private async void hlinkFav_Tapped(object sender, TappedRoutedEventArgs e)
+        private void HamBurger_Click(object sender, RoutedEventArgs e)
+        {
+            // This event is occurs when Hamburger menu button is clicked and toggles the state of the menu
+            MenuSplitView.IsPaneOpen = !MenuSplitView.IsPaneOpen;
+        }
+        //Main page events end here
+
+        //Main menu Tap events
+        private async void tbHome_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (App.isFavoutiteListSaved)
+            {
+                MainFrame.Navigate(typeof(MelbourneMain));
+            }
+            else if (!App.isFavoutiteListSaved)
+            {
+
+                try
+                {
+                    await MsgForFav.ShowAsync();
+                }
+                catch (Exception exp)
+                {
+                    var msg = new MessageDialog(exp.ToString());
+                    await msg.ShowAsync();
+                }
+            }
+        }
+        private async void tbCategories_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            //This event occurs when Categories is tapped and categories Flyout is opened
+            if (App.isFavoutiteListSaved)
+            {
+                FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+            }
+            else if (!App.isFavoutiteListSaved)
+            {
+
+                await MsgForFav.ShowAsync();
+
+
+            }
+        }
+        private async void tb_directions_Tapped(object sender, TappedRoutedEventArgs e)
+          {
+            // This event occurs when directions textblock is selected
+            if (App.isFavoutiteListSaved)
+            {
+                MainFrame.Navigate(typeof(GetDirections));
+            }
+            else
+            {
+                await MsgForFav.ShowAsync();
+            }
+        }
+        private async void tblFavourites_Tapped(object sender, TappedRoutedEventArgs e)
         {
             if (App.isFavoutiteListSaved)
             {
@@ -173,38 +179,22 @@ namespace GatewayMelbourne
                 await MsgForFav.ShowAsync();
             }
         }
-
-
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void frameGrid_Loading(FrameworkElement sender, object args)
-        {
-            
-        }
-
-        private async void tbHome_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void tblHelp_Tapped(object sender, TappedRoutedEventArgs e)
         {
             if (App.isFavoutiteListSaved)
             {
-                MainFrame.Navigate(typeof(MelbourneMain));
+                MainFrame.Navigate(typeof(HelpPage));
             }
-            else if (!App.isFavoutiteListSaved)
+            else
             {
-               
-                try {
-                    await MsgForFav.ShowAsync();
-                } 
-                catch(Exception exp)
-                {
-                    var msg = new MessageDialog(exp.ToString());
-                    await msg.ShowAsync();
-                }
-                }
+                await MsgForFav.ShowAsync();
+            }
+
         }
+       //Main menu events here
+
+        
+      //Navigation events start from here
 
         private async void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -221,7 +211,6 @@ namespace GatewayMelbourne
                 await MsgForFav.ShowAsync();
             }
         }
-
         private async void btnForward_Click(object sender, RoutedEventArgs e)
         {
 
@@ -237,14 +226,6 @@ namespace GatewayMelbourne
                 await MsgForFav.ShowAsync();
             }
         }
-
-        private void MainFrame_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-
-
         private void MainFrame_LayoutUpdated(object sender, object e)
         {
             // The following code is used to update the visibility of the back and forward buttons
@@ -266,7 +247,10 @@ namespace GatewayMelbourne
             }
         }
 
+     
+        //Navigation menu ends here
       
+       //Category menu events start here
 
         private void tblDayToursCategory_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -278,9 +262,7 @@ namespace GatewayMelbourne
             MainFrame.Navigate(typeof(Events));
         }
 
-      
-
-        private void tblParksCategory_Tapped(object sender, TappedRoutedEventArgs e)
+         private void tblParksCategory_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MainFrame.Navigate(typeof(ParksAndGarderns));
         }
@@ -289,7 +271,33 @@ namespace GatewayMelbourne
         {
             MainFrame.Navigate(typeof(InTheCity));
         }
+        private void lbCategorySelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //This event occurs when a item is slected in the categories flyout list is selected and navigatio is facilitated as selected
 
+            if (lbItem_ViewFavourite.IsSelected)
+            {
+                MainFrame.Navigate(typeof(DayTours));
+
+            }
+            if (lbItem_AddFavourite.IsSelected)
+            {
+                MainFrame.Navigate(typeof(Events));
+            }
+            if (lbItem_DeleteFavourite.IsSelected)
+            {
+                MainFrame.Navigate(typeof(InTheCity));
+            }
+            if (lbItem_Parks.IsSelected)
+            {
+                MainFrame.Navigate(typeof(ParksAndGarderns));
+            }
+        }
+
+      //Category menu events end here
+ 
+      //Favourite menu events start here
+ 
         private void lbFavourite_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lbItem_ViewFavourite.IsSelected)
@@ -305,7 +313,7 @@ namespace GatewayMelbourne
             {
                 MainFrame.Navigate(typeof(DeleteFavourites));
             }
-          
+
         }
 
         private void tblViewFavourites_Tapped(object sender, TappedRoutedEventArgs e)
@@ -313,7 +321,7 @@ namespace GatewayMelbourne
             MainFrame.Navigate(typeof(ViewFavourites));
         }
 
-        private void tblFavourites_Tapped(object sender, TappedRoutedEventArgs e)
+        private void tblAddtoFavourites_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MainFrame.Navigate(typeof(Favourites));
         }
@@ -322,23 +330,8 @@ namespace GatewayMelbourne
         {
             MainFrame.Navigate(typeof(DeleteFavourites));
         }
+     //Favourites menu evetns end here
 
-        private void tbFavouritesIcon_Tapped(object sender, TappedRoutedEventArgs e)
-        {
 
-        }
-
-        private async void tblHelp_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            if (App.isFavoutiteListSaved)
-            {
-                MainFrame.Navigate(typeof(HelpPage));
-            }
-            else
-            {
-                await MsgForFav.ShowAsync();
-            }
-
-        }
     }
 }

@@ -59,8 +59,8 @@
 
                 <Image Source="/Assets/City/FlindersStreet/FlindersStreetSmall.png" Style="{StaticResource sideImages}"></Image>
                 <Image Source="/Assets/City/FlindersStreet/PrinceBrdg.png" Style="{StaticResource sideImages}"></Image>
-                <Image Source="/Assets/City/FlindersStreet/StPaulsCathedralLarge.png" Style="{StaticResource sideImages}"></Image>
-                <Image Source="/Assets/City/FlindersStreet/ArtsCentre.png" Style="{StaticResource sideImages}"/>
+                <Image Source="/Assets/City/FlindersStreet/StPaulsCathedralLarge1.png" Style="{StaticResource sideImages}" Height="157"></Image>
+                <Image Source="/Assets/City/FlindersStreet/ArtsCentre.png" Style="{StaticResource sideImages}" Height="151"/>
 
             </StackPanel>
 

@@ -33,32 +33,33 @@ namespace GatewayMelbourne
         internal static bool isFavoutiteListSaved;
         internal static string path;
         public static SQLite.Net.SQLiteConnection conn;
-        public static List<Location> tempFaavouriteList = new List<Location>();
+        public static List<Location> tempFavouriteList = new List<Location>();
         public static string myTheme;
-        
-        
+
+
 
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             DbHelperClass db = new DbHelperClass();
-            db.CreateDbase();
-            //db.deleteData();
-            //db.insertLocations();
-            isFavoutiteListSaved =true;
-            
-            
-            
+            db.CreateDbase();// Data base is created here at the start of the app.
+            db.delete();//This method would delete all the table data. This has to be invoked when changes are done to the data
+            db.insertLocations();//This method is used insert data into the database initially.
+            isFavoutiteListSaved = true;
            
-    }
+
+
+
+
+        }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override  void OnLaunched(LaunchActivatedEventArgs e)
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             //#if DEBUG
             //            if (System.Diagnostics.Debugger.IsAttached)
@@ -67,7 +68,7 @@ namespace GatewayMelbourne
             //            }
             //#endif
             Frame rootFrame = Window.Current.Content as Frame;
-           
+
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -100,7 +101,7 @@ namespace GatewayMelbourne
                 Window.Current.Activate();
             }
 
-         
+
         }
 
         /// <summary>
@@ -109,10 +110,10 @@ namespace GatewayMelbourne
         /// <param name="sender">The Frame which failed navigation</param>
         /// <param name="e">Details about the navigation failure</param>
         /// 
-        public void resetTheme()
-        {
-           
-        }
+       
+
+
+
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
@@ -125,12 +126,22 @@ namespace GatewayMelbourne
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
+        /// 
+
+   
+
+      
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
+           
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+          
+            
             deferral.Complete();
+
+
+
         }
-       
     }
 }

@@ -29,10 +29,10 @@
             <Image Source="/Assets/Events/AFL/Logo.png" Height="30"  />
             <Image Source="/Assets/Events/AFL/Logo.png" Height="30"  />
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="-10,28,-128,-5" HorizontalAlignment="Left" Width="1796">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,28,-128,-5" HorizontalAlignment="Left" Width="1796">
             <StackPanel  Margin="0,0,50,337" CornerRadius="5" Width="1053">
                 <StackPanel Background="Black" CornerRadius="5">
-                    <Image Margin="2,2,2,2" Source="/Assets/Events/AFL/MCG.png" Stretch="UniformToFill" Height="400" />
+                    <Image Margin="2,2,2,2" Source="/Assets/Events/AFL/Mcg.png" Stretch="UniformToFill" Height="400" />
                 </StackPanel>
                 <StackPanel CornerRadius="5"  Style="{StaticResource DescStackPanel}" Margin="10" >
                     <StackPanel Background="White" CornerRadius="5" Style="{StaticResource TextPanel}" Height="105">
@@ -40,17 +40,17 @@
                         <TextBlock Style="{StaticResource BodyFont}" Text="If you are in Melbourne,Victoria or anywhere in Australia you cannot ignore this. The Australian Rules Foot Ball league or AFL or Footy is at you all the time.AFL runs all winter and is in the news all year. Melbpourne Cricket Ground(MCG) is the Mecca strangely not cricket. Grand Finals in September is the pinacle of footy and every football fan and player want to be a part.The Grand finals is more or less like a festival which is celebrated over a week with a public holiday in Victoria before the game. Over 100,000 people flock to MCG on the Grand Final day with a parade of teams in the Streets of Melbourne one day prior and the winners parade after the game."  Margin="3,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
-              
-                    <StackPanel Style="{StaticResource ResourceKey=DescStackPanel}" CornerRadius="5" Margin="2,10,872,2" >
-                        <StackPanel Orientation="Horizontal" Style="{StaticResource TextPanel}" CornerRadius="5"  Margin="2,2,0,2" HorizontalAlignment="Left" Width="175" >
-                            <TextBlock  x:Name="tbDirectionsIcon" Tapped="tbDirectionsIcon_Tapped" FontFamily="Segoe MDL2 Assets" Text="&#xE816;" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,1,15,2"/>
-                            <TextBlock x:Name="btnGetDirections" Text="Get Directions" Tapped="tbDirectionsIcon_Tapped"/>
-                        </StackPanel>
+
+                <StackPanel Style="{StaticResource ResourceKey=DescStackPanel}" CornerRadius="5" Margin="16,10,872,2" >
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource TextPanel}" CornerRadius="5"  Margin="2,2,0,2" HorizontalAlignment="Left" Width="158" >
+                        <TextBlock  x:Name="tbDirectionsIcon" Tapped="tbDirectionsIcon_Tapped" FontFamily="Segoe MDL2 Assets" Text="&#xE816;" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,1,15,2"/>
+                        <TextBlock x:Name="btnGetDirections" Text="Get Directions" Tapped="tbDirectionsIcon_Tapped" Width="106"/>
                     </StackPanel>
-                
+                </StackPanel>
+
 
             </StackPanel>
-               
+
             <StackPanel Width="330" Margin="0,0,0,50" >
 
 

@@ -42,7 +42,7 @@
                 <StackPanel x:Name="pnlitemText" CornerRadius="5" Style="{StaticResource DescStackPanel}">
                     <StackPanel x:Name="pnlitemInnerText" Style="{StaticResource TextPanel}" CornerRadius="5"  Height="65">
 
-                        <TextBlock  x:Name="tblItemDescription" Style="{StaticResource BodyFont}" Text="Crown Entertainment complex is the place to be if you are looking for entertainment. Crown complex has the biggest Casino in the Southern Hemisphere and one of the biggest in the world. It has 4 luxurious hotels,Ballrooms,Theaters,Shopping,Gaming,Bowling,Restaurants.You name it,It has got it,including a waterfall.Located on the South Bank of Yarra Crown complex is a world in itself."/>
+                        <TextBlock  x:Name="tblItemDescription" Style="{StaticResource BodyFont}" Text="Crown Entertainment complex in Melbourne is the place to be if you are looking for entertainment. Crown complex has the biggest Casino in the Southern Hemisphere and one of the biggest in the world. It has 4 luxurious hotels,Ballrooms,Theaters,Shopping,Gaming,Bowling,Restaurants.You name it,It has got it,including a waterfall.Located on the South Bank of Yarra Crown complex is a world in itself."/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Style="{StaticResource ResourceKey=DescStackPanel}" CornerRadius="5" Margin="2,10,872,2" >

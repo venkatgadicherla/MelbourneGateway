@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace GatewayMelbourne
 {
     public class Location
-    {
+     {
+        //Class Location is the key class in the app. It embodies all the attributes of the locations in the app and used to make the database using Sql lite
+        //It is also used for the search algorithm and to store favourite status of the location.
         [PrimaryKey, AutoIncrement, NotNull]
         public int locationId { get; set; }
         [NotNull]
