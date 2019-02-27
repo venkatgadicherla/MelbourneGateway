@@ -63,7 +63,7 @@ namespace GatewayMelbourne
                             insideStack.Orientation = Orientation.Horizontal;
                             StackPanel innerInsideStack = new StackPanel();
 
-                            //innerInsideStack.VerticalAlignment = VerticalAlignment.Bottom;
+                           // //innerInsideStack.VerticalAlignment = VerticalAlignment.Bottom;
                             innerInsideStack.Name = "innerInsideStack";
                             innerInsideStack.VerticalAlignment = VerticalAlignment.Top;
                             innerInsideStack.Margin = new Thickness(3);
